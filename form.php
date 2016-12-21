@@ -1,15 +1,22 @@
 <?php
 
 if(isset($_POST['submit'])) {
-  echo "It worked!";
-}
-echo "<br>";
-if(isset($_POST['password'])) {
-  echo "Found the password!";
-}
-echo "<br>";
-if(isset($_POST['text'])) {
-  echo "Found the text!!";
+//   echo "It worked!";
+// }
+// echo "<br>";
+// if(isset($_POST['password'])) {
+//   echo "Found the password!";
+// }
+// echo "<br>";
+// if(isset($_POST['username'])) {
+//   echo "Found the text!!";
+
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+echo "Hello, " . $username . '. ';
+echo "Your password is: " . $password;
+
 }
 
 ?>
@@ -22,7 +29,7 @@ if(isset($_POST['text'])) {
   <body>
 
     <form action="form.php" method="post">
-      <input type="text" placeholder="Enter Your Username" name="text">
+      <input type="text" placeholder="Enter Your Username" name="username">
       <br>
       <input type="password" placeholder="Enter Your Password" name="password">
       <br>
