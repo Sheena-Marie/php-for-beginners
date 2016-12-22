@@ -1,9 +1,28 @@
 <?php
-if (isset($_POST['submit'])) {
+// if (isset($_POST['submit'])) {
+
+
+
+
   $username = $_POST['username'];
   $password = $_POST['password'];
+  //
+  // if ($username && $password) {
+  //   echo $username . $password;
+  // } else {
+  //   echo "Nope, not set";
+  // }
 
-  echo $username . $password;
+  // echo $username . $password;
+// }
+
+$connection = mysqli_connect('localhost', 'root', '', 'loginapp');
+
+// Testing to see if the database connected
+if ($connection) {
+  echo "We are connected";
+} else {
+  die("Database didn't connect");
 }
 ?>
 
