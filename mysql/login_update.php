@@ -1,14 +1,6 @@
-<?php include "db.php";
+<?php include "db.php"; ?>
 
-    $query = "SELECT * FROM users";
-
-    $result = mysqli_query($connection, $query);
-
-    if (!$result) {
-      die('query FAILED' . mysqli_error($connection));
-    }
-
-?>
+<?php include "functions.php"; ?>
 
 <!DOCTYPE html>
 <html>
@@ -42,8 +34,11 @@
             </div>
 
             <div class="form-group">
-              <select class="" name="">
-                <option value="">1</option>
+              <select name="id">
+                <?php
+                  showAllData();
+                ?>
+
               </select>
             </div>
 
