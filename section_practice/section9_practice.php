@@ -2,12 +2,14 @@
 <?php include "includes/header.php";?>
 
 <?php
+// setting the cookie
 $cookieName = '9PracticeSession';
 $value = 100;
 $expiration = time() + (60*60*24*7);
 
 setcookie($cookieName, $value, $expiration);
 
+// creating the session
 session_start();
 
 $_SESSION['name'] = "This is the name of the session";
@@ -29,6 +31,7 @@ $_SESSION['name'] = "This is the name of the session";
 
 	<?php
 
+  // Creating a link with an id
 	$id= 42;
 	$link = 'The meaning of life, the universe and everything is...';
 
@@ -49,6 +52,7 @@ $_SESSION['name'] = "This is the name of the session";
 <?php print_r($_GET); ?>
 
 <?php
+// Showing the cookie on the screen
 echo "<hr>";
 if(isset($_COOKIE['9PracticeSession'])) {
 	echo $_COOKIE['9PracticeSession'];
