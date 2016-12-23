@@ -1,13 +1,12 @@
-<?php include "db.php"; ?>
-
-<?php include "functions.php"; ?>
+<?php
+// Files to be included
+  include "db.php";
+  include "functions.php";
+?>
 
 <?php
-
-  if(isset($_POST['submit'])){
-    UpdateTable();
-  }
-
+// Function to Update the Table - Found in functions.php
+  UpdateTable();
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +28,7 @@
 
     <div class="container">
       <div class="col-sm-6">
+        <h1 class="text-center">Update</h1>
 
           <form class="" action="login_update.php" method="post">
             <div class="form-group">
@@ -45,6 +45,7 @@
               <select name="id">
 
                 <?php
+                // Function to show all the data. Found in functions.php
                   showAllData();
                 ?>
 

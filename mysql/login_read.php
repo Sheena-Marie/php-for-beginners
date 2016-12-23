@@ -1,21 +1,12 @@
 <?php
+// Files to be included
+  include 'db.php';
+  include 'functions.php';
+?>
 
-    $connection = mysqli_connect('localhost', 'root', '', 'loginapp');
-
-    if($connection) {
-      echo 'We are connected';
-    } else {
-      die('Database connection failed!');
-    }
-
-    $query = "SELECT * FROM users";
-
-    $result = mysqli_query($connection, $query);
-
-    if (!$result) {
-      die('query FAILED' . mysqli_error($connection));
-    }
-
+<?php
+ // Function to read each row. Found in functions.php
+  readRows();
 ?>
 
 <!DOCTYPE html>
@@ -37,10 +28,12 @@
 
     <div class="container">
       <div class="col-sm-6">
+        <h1 class="text-center">Reading the Rows</h1>
 
+        <!-- Shows each entry individually -->
         <?php
-        while($row = mysqli_fetch_assoc($result)) {
-          ?>
+          while($row = mysqli_fetch_assoc($result)) {
+        ?>
 
           <pre>
 

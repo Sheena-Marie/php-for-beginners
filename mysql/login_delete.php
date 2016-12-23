@@ -1,12 +1,12 @@
 <?php
 // Files to be included
-  include 'db.php';
-  include 'functions.php';
+  include "db.php";
+  include "functions.php";
 ?>
 
 <?php
-  // Function to create a new row in the table. Found in functions.php 
-  createRows();
+ // Function to delete a row. Found in functions.php
+  deleteRows();
 ?>
 
 <!DOCTYPE html>
@@ -28,22 +28,34 @@
 
     <div class="container">
       <div class="col-sm-6">
-        <h1 class="text-center">Create</h1>
-        <form class="" action="login_create.php" method="post">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" name="username" class="form-control">
+        <h1 class="text-center">Delete</h1>
 
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" name="password" class="form-control">
+          <form class="" action="login_delete.php" method="post">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" name="username" class="form-control">
+            </div>
 
-          </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" name="password" class="form-control">
+            </div>
 
-          <input type="submit" name="submit" value="Create" class="btn btn-info">
+            <div class="form-group">
+              <select name="id">
 
-        </form>
+                <?php
+                // Function ot show the id number of a row. Found in functions.php
+                  showAllData();
+                ?>
+
+              </select>
+            </div>
+
+            <input type="submit" name="submit" value="Delete" class="btn btn-info">
+
+          </form>
+
       </div>
     </div>
 
