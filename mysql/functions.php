@@ -5,8 +5,13 @@
   // Create an entry in the Database
   function createRows(){
     global $connection;
+
     $username = $_POST['username'];
     $password = $_POST['password'];
+
+    // Used to escape all the data inside the field, it helps prevent SQL injection.
+    $username = mysqli_real_escape_string($connection, $username);
+    $password = mysqli_real_escape_string($connection, $password);
 
     $query = "INSERT INTO users(username,password) VALUES('$username', '$password')";
 
@@ -63,6 +68,11 @@
       $password = $_POST['password'];
       $id = $_POST['id'];
 
+      // Used to escape all the data inside the field, it helps prevent SQL injection.
+      $username = mysqli_real_escape_string($connection, $username);
+      $password = mysqli_real_escape_string($connection, $password);
+      $id = mysqli_real_escape_string($connection, $id);
+
       $query = "UPDATE users SET ";
       $query .= "username = '$username', ";
       $query .= "password = '$password' ";
@@ -85,6 +95,11 @@
       $username = $_POST['username'];
       $password = $_POST['password'];
       $id = $_POST['id'];
+
+      // Used to escape all the data inside the field, it helps prevent SQL injection.
+      $username = mysqli_real_escape_string($connection, $username);
+      $password = mysqli_real_escape_string($connection, $password);
+      $id = mysqli_real_escape_string($connection, $id);
 
       $query = "DELETE FROM users ";
       $query .= "WHERE id = $id";
