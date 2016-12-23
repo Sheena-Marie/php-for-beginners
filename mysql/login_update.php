@@ -2,6 +2,14 @@
 
 <?php include "functions.php"; ?>
 
+<?php
+
+  if(isset($_POST['submit'])){
+    UpdateTable();
+  }
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -35,6 +43,7 @@
 
             <div class="form-group">
               <select name="id">
+
                 <?php
                   showAllData();
                 ?>
