@@ -22,13 +22,16 @@
   // Functions to read the rows of the Database.
   function readRows(){
     global $connection;
-    global $result;
     $query = "SELECT * FROM users";
 
     $result = mysqli_query($connection, $query);
 
     if (!$result) {
       die('query FAILED' . mysqli_error($connection));
+    }
+
+    while($row = mysqli_fetch_assoc($result)) {
+      print_r($row);
     }
   }
 
